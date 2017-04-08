@@ -3,10 +3,10 @@ import moduleForAcceptance from 'course-builder-ui/tests/helpers/module-for-acce
 
 moduleForAcceptance('Acceptance | main/my courses');
 
-test('Must allow user to create courses', function(assert) {
+test('Must allow user to starting create courses', function(assert) {
   visit('/courses');
 
-  click('.create-course-btn');
+  click('.btn-new-course');
 
   andThen(function() {
     assert.equal(currentURL(), '/courses/new');
