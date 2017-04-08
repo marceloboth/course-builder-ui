@@ -5,6 +5,10 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
+    'ember-froala-editor': {
+      plugins  : true,
+      themes   : 'royal'
+    },
   });
 
   app.import('vendor/spectre.css/spectre.min.css');
