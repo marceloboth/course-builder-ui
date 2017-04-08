@@ -1,3 +1,6 @@
-{{course-form title="New course"
-              changeset=(changeset model CourseValidations)
-              save=(action 'save')}}
+{{
+  course-form title="New course"
+    changeset=(changeset model CourseValidations)
+    save=(action 'save')
+    rollback=(action 'rollback')
+}}
