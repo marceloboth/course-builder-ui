@@ -11,6 +11,9 @@ Router.map(function() {
 
   this.route('main', { path: '/' }, function() {
     this.route('courses', function() {
+      this.route('course', { path: ':course_id'}, function(){
+        this.route('edit');
+      });
       this.route('new');
     });
   });
