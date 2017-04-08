@@ -1,3 +1,3 @@
 export default function(server) {
-  server.create('course');
+  server.createList('course', 5);
 }

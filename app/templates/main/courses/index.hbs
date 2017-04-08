@@ -1,5 +1,10 @@
-<div class="columns col-gapless">
+<div class="columns">
   <div class="column col-3">
     {{new-course-card}}
   </div>
+  {{#each model as |course|}}
+    <div class="column col-3">
+      {{my-course-card course=course}}
+    </div>
+  {{/each}}
 </div>
