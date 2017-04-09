@@ -1,0 +1,27 @@
+<div class="panel">
+  <div class="panel-header">
+    <div class="panel-title">{{title}}: {{changeset.name}}</div>
+  </div>
+  <div class="panel-nav">
+    {{#if changeset.isInvalid }}
+      Fix the errors
+    {{/if}}
+  </div>
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="form-label" for="chapter-name">Name</label>
+      {{input value=changeset.name placeholder="Chapter name" id="chapter-name" class="form-input"}}
+      {{#if changeset.error.name}}
+        <div class="chapter-name-error">
+          <p class="form-input-hint">{{changeset.error.name.validation}}</p>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+  <div class="panel-footer">
+    <button class="btn btn-primary btn-save-chapter" {{action save changeset}}>Save</button>
+    <button class="btn btn-default btn-reset-chapter" {{action rollback changeset}}>Reset</button>
+
+    {{link-to 'Back' 'main.courses' class='btn btn-link'}}
+  </div>
+</div>
