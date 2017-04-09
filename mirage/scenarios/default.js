@@ -1,3 +1,3 @@
 export default function(server) {
-  server.createList('course', 5);
+  server.create('chapter');
 }

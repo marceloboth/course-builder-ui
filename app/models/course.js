@@ -5,5 +5,6 @@ export default DS.Model.extend({
   subtitle: DS.attr(),
   description: DS.attr(),
   price: DS.attr('number'),
-  duration: DS.attr('number')
+  duration: DS.attr('number'),
+  chapters: DS.hasMany('chapters')
 });
