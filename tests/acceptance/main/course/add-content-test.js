@@ -12,6 +12,11 @@ test('visiting /courses/contents/new', function(assert) {
     assert.equal(currentURL(), `/courses/${course.id}/contents/new`);
   });
 
+  fillIn('#content-title', Array(257).join('e'));
+  andThen(() => {
+    assert.equal(find('.content-title-error').text().trim(), 'Title is too long (maximum is 255 characters)');
+  });
+
   fillIn('#content-title', 'Content one');
 
   click('.btn-save-content');
