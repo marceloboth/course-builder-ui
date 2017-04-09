@@ -26,3 +26,19 @@ test('Must list all courses created by the user', function(assert) {
 });
 
 
+test('User can edit course by click in update button', function(assert) {
+  let course = server.create('course');
+
+  visit('/courses');
+
+  andThen(function() {
+    assert.equal(currentURL(), '/courses');
+  });
+
+  click('.btn-course-update');
+
+  andThen(() => {
+    assert.equal(currentURL(), `/courses/${course.id}/edit`);
+  });
+});
+
