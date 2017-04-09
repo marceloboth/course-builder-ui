@@ -9,9 +9,12 @@
     <p>Price: $ {{course.price}}</p>
     <p>Duration of {{course.duration}} hours</p>
     <p class="total-of-chapters">Number of chapters: {{course.chapters.length}}</p>
+    {{#each course.contents as |content|}}
+      <p class="content">{{content.title}}</p>
+    {{/each}}
   </div>
   <div class="card-footer">
-    {{link-to 'Edit' 'main.courses.course.edit' course class="btn btn-primary btn-course-update"}}
-    {{link-to 'Add Chapter' 'main.courses.course.chapters.new' course class="btn btn-default btn-course-chapter"}}
+    {{link-to 'Edit' 'courses.course.edit' course class="btn btn-primary btn-course-update"}}
+    {{link-to 'Add Chapter' 'courses.course.chapters.new' course class="btn btn-default btn-course-chapter"}}
   </div>
 </div>

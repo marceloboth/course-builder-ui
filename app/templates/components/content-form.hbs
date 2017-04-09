@@ -9,18 +9,18 @@
   </div>
   <div class="panel-body">
     <div class="form-group">
-      <label class="form-label" for="chapter-title">Title</label>
-      {{input value=changeset.title placeholder="Chapter title" id="chapter-title" class="form-input"}}
+      <label class="form-label" for="content-title">Title</label>
+      {{input value=changeset.title placeholder="content title" id="content-title" class="form-input"}}
       {{#if changeset.error.title}}
-        <div class="chapter-title-error">
+        <div class="content-title-error">
           <p class="form-input-hint">{{changeset.error.title.validation}}</p>
         </div>
       {{/if}}
     </div>
   </div>
   <div class="panel-footer">
-    <button class="btn btn-primary btn-save-chapter" {{action save changeset}}>Save</button>
-    <button class="btn btn-default btn-reset-chapter" {{action rollback changeset}}>Reset</button>
+    <button class="btn btn-primary btn-save-content" {{action save changeset}}>Save</button>
+    <button class="btn btn-default btn-reset-content" {{action rollback changeset}}>Reset</button>
 
     {{link-to 'Back' 'courses' class='btn btn-link'}}
   </div>

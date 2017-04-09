@@ -12,7 +12,7 @@ test('visiting /courses/chapters/new', function(assert) {
     assert.equal(currentURL(), `/courses/${course.id}/chapters/new`);
   });
 
-  fillIn('#chapter-name', 'Chapter one');
+  fillIn('#chapter-title', 'Chapter one');
 
   click('.btn-save-chapter');
 

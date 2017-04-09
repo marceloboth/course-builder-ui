@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import CourseValidations from  '../../../validations/course';
+import CourseValidations from  '../../validations/course';
 
 export default Ember.Controller.extend({
   CourseValidations,
@@ -8,9 +8,7 @@ export default Ember.Controller.extend({
       changeset.validate().then(() => {
         if (changeset.get('isValid')) {
           changeset.save().then(() => {
-            this.transitionToRoute('main.courses').then((route) => {
-              route.controller.set('message', 'Your new course was created!');
-            });
+            this.transitionToRoute('courses');
           });
         }
       });
