@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import TitleValidations from  '../../../../validations/title';
+import TitleValidations from  '../../validations/title';
 
 export default Ember.Controller.extend({
   TitleValidations,
