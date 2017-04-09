@@ -3,4 +3,5 @@ export default function() {
 
   this.resource('courses');
   this.resource('chapters');
+  this.resource('contents');
 }

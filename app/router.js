@@ -10,12 +10,17 @@ Router.map(function() {
   this.route('login');
 
   this.route('main', { path: '/' }, function() {
-    this.route('courses', function() {
+    this.route('courses', { resetNamespace: true }, function() {
       this.route('course', { path: ':course_id'}, function(){
         this.route('edit');
 
         this.route('chapters', function() {
           this.route('new');
+        });
+
+        this.route('contents', function() {
+          this.route('new');
+          this.route('teste');
         });
       });
       this.route('new');
