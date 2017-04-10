@@ -18,8 +18,11 @@ Router.map(function() {
           this.route('new');
 
           this.route('chapter', { path: ':chapter_id' }, function() {
+            this.route('edit');
+
             this.route('content', { resetNamespace: true }, function() {
               this.route('new');
+              this.route('edit', { path: ':content_id/edit' });
             });
           });
         });

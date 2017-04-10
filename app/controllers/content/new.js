@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
       changeset.validate().then(() => {
         if (changeset.get('isValid')) {
           changeset.save().then(() => {
-            this.transitionToRoute('courses');
+            this.transitionToRoute('chapters');
           });
         }
       });
