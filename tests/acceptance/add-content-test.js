@@ -3,13 +3,14 @@ import moduleForAcceptance from 'course-builder-ui/tests/helpers/module-for-acce
 
 moduleForAcceptance('Acceptance | add content');
 
-test('visiting /courses/contents/new', function(assert) {
-  let course = server.create('course');
+test('User should can create a new content for the chapter', function(assert) {
+  let chapter = server.create('chapter');
+  const new_content_path = `/courses/${chapter.course.id}/chapters/${chapter.id}/content/new`;
 
-  visit(`/courses/${course.id}/contents/new`);
+  visit(new_content_path);
 
   andThen(() => {
-    assert.equal(currentURL(), `/courses/${course.id}/contents/new`);
+    assert.equal(currentURL(), new_content_path);
   });
 
   fillIn('#content-title', Array(257).join('e'));
@@ -22,6 +23,7 @@ test('visiting /courses/contents/new', function(assert) {
   click('.btn-save-content');
 
   andThen(() => {
-    assert.equal(find('.content:first').text(), 'Content one');
+    assert.equal(currentURL(), `/courses/${chapter.course.id}/chapters`);
+    assert.equal(find('.content-title:first').text(), 'Content one');
   });
 });
