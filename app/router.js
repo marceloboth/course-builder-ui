@@ -11,16 +11,20 @@ Router.map(function() {
 
   this.route('main', { path: '/' }, function() {
     this.route('courses', { resetNamespace: true }, function() {
-      this.route('course', { path: ':course_id'}, function(){
+      this.route('course', { path: ':course_id', resetNamespace: true }, function(){
         this.route('edit');
 
-        this.route('chapters', function() {
+        this.route('chapters', { resetNamespace: true }, function() {
           this.route('new');
-        });
 
-        this.route('contents', function() {
-          this.route('new');
-          this.route('teste');
+          this.route('chapter', { path: ':chapter_id' }, function() {
+            this.route('edit');
+
+            this.route('content', { resetNamespace: true }, function() {
+              this.route('new');
+              this.route('edit', { path: ':content_id/edit' });
+            });
+          });
         });
       });
       this.route('new');

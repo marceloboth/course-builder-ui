@@ -1,8 +1,8 @@
 import Ember from 'ember';
-import TitleValidations from  '../../../../validations/title';
+import CourseValidations from  '../../validations/course';
 
 export default Ember.Controller.extend({
-  TitleValidations,
+  CourseValidations,
   actions: {
     save(changeset) {
       changeset.validate().then(() => {

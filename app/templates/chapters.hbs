@@ -1,0 +1,13 @@
+<div class="columns">
+  <div class="column col-3">
+    {{chapters-list chapters=model}}
+
+    <div class="divider text-center" data-content="OR"></div>
+    <div class="centered">
+      {{link-to 'New Chapter' 'chapters.new' class='btn btn-primary'}}
+    </div>
+  </div>
+  <div class="column col-6">
+    {{outlet}}
+  </div>
+</div>

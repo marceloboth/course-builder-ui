@@ -1,0 +1,7 @@
+{{#each sortContentsByOrder as |content|}}
+  <ul class="nav">
+    <li class="nav-item">
+      {{link-to content.title 'content.edit' content.chapter content}}
+    </li>
+  </ul>
+{{/each}}

@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model() {
     return this.store.createRecord('chapter', {
-      course: this.modelFor('courses/course')
+      course: this.modelFor('course')
     });
   }
 });

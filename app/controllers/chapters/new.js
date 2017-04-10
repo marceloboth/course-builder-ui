@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import TitleValidations from  '../../../../validations/title';
+import TitleValidations from  '../../validations/title';
 
 export default Ember.Controller.extend({
   TitleValidations,
@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
       changeset.validate().then(() => {
         if (changeset.get('isValid')) {
           changeset.save().then(() => {
-            this.transitionToRoute('courses');
+            this.transitionToRoute('chapters');
           });
         }
       });
