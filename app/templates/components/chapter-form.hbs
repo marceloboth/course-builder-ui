@@ -17,11 +17,25 @@
         </div>
       {{/if}}
     </div>
+    <div class="form-group">
+      <label class="form-label" for="chapter-title">Chapter Order</label>
+      {{input value=changeset.order placeholder="1" id="chapter-order" class="form-input"}}
+      {{#if changeset.error.order}}
+        <div class="chapter-order-error">
+          <p class="form-input-hint">{{changeset.error.order.validation}}</p>
+        </div>
+      {{/if}}
+    </div>
   </div>
   <div class="panel-footer">
     <button class="btn btn-primary btn-save-chapter" {{action save changeset}}>Save</button>
     <button class="btn btn-default btn-reset-chapter" {{action rollback changeset}}>Reset</button>
 
+    {{#if changeset.id}}
+    <div class="divider text-center" data-content="OR"></div>
+    {{link-to 'New content' 'content.new' class='btn btn-default'}}
+    {{/if}}
+    <div class="divider text-center"></div>
     {{link-to 'Back' 'courses' class='btn btn-link'}}
   </div>
 </div>
