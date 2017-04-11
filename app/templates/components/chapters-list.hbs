@@ -1,7 +1,7 @@
 <ul class="nav">
   <li class="nav-item">
     {{#each sortChaptersByOrder as |chapter|}}
-      {{link-to chapter.title 'chapters.chapter.edit' chapter}}
+      {{link-to chapter.title 'chapters.chapter.edit' chapter class='chapter'}}
       {{contents-list contents=chapter.contents}}
     {{/each}}
   </li>
