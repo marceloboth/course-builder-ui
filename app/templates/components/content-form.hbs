@@ -17,14 +17,30 @@
         </div>
       {{/if}}
     </div>
-    <div class="form-group">
-      <label class="form-label" for="content-title">Content Order</label>
-      {{input value=changeset.order placeholder="1" id="content-order" class="form-input"}}
-      {{#if changeset.error.order}}
-        <div class="content-order-error">
-          <p class="form-input-hint">{{changeset.error.order.validation}}</p>
+    <div class="columns">
+      <div class="column col-6">
+        <div class="form-group">
+          <label class="form-label" for="content-title">Content Order</label>
+          {{input value=changeset.order placeholder="1" id="content-order" class="form-input"}}
+          {{#if changeset.error.order}}
+            <div class="content-order-error">
+              <p class="form-input-hint">{{changeset.error.order.validation}}</p>
+            </div>
+          {{/if}}
         </div>
-      {{/if}}
+      </div>
+      <div class="column col-6">
+        <div class="form-group">
+          <label class="form-label" for="content-chapter">Chapter</label>
+          {{#power-select
+            options=chapters
+            selected=changeset.chapter
+            searchField='title'
+            onchange=(action (mut changeset.chapter)) as |chapter|}}
+              {{chapter.title}}
+          {{/power-select}}
+        </div>
+      </div>
     </div>
   </div>
   <div class="panel-footer">
