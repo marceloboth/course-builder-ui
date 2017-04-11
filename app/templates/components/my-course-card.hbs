@@ -8,10 +8,6 @@
   <div class="card-body">
     <p>Price: $ {{course.price}}</p>
     <p>Duration of {{course.duration}} hours</p>
-    <p class="total-of-chapters">Number of chapters: {{course.chapters.length}}</p>
-    {{#each course.contents as |content|}}
-      <p class="content">{{content.title}}</p>
-    {{/each}}
   </div>
   <div class="card-footer">
     {{link-to 'Edit' 'course.edit' course class="btn btn-primary btn-course-update"}}

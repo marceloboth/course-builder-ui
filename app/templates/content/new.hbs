@@ -1,6 +1,7 @@
 {{
   content-form title="New content"
-    changeset=(changeset model TitleValidations)
+    changeset=(changeset model.content TitleValidations)
+    chapters=model.chapters
     save=(action 'save')
     rollback=(action 'rollback')
 }}
