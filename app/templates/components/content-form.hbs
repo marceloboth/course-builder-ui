@@ -8,26 +8,10 @@
     {{/if}}
   </div>
   <div class="panel-body">
-    <div class="form-group">
-      <label class="form-label" for="content-title">Title</label>
-      {{input value=changeset.title placeholder="content title" id="content-title" class="form-input"}}
-      {{#if changeset.error.title}}
-        <div class="content-title-error">
-          <p class="form-input-hint">{{changeset.error.title.validation}}</p>
-        </div>
-      {{/if}}
-    </div>
+    {{validated-input changeset=changeset propertyName='title' placeholder="Chapter Title"}}
     <div class="columns">
       <div class="column col-6">
-        <div class="form-group">
-          <label class="form-label" for="content-title">Content Order</label>
-          {{input value=changeset.order placeholder="1" id="content-order" class="form-input"}}
-          {{#if changeset.error.order}}
-            <div class="content-order-error">
-              <p class="form-input-hint">{{changeset.error.order.validation}}</p>
-            </div>
-          {{/if}}
-        </div>
+        {{validated-input changeset=changeset propertyName='order' placeholder="Chapter Order"}}
       </div>
       <div class="column col-6">
         <div class="form-group">
