@@ -5,14 +5,14 @@
     <span class="input-group-addon">{{inputTextBefore}}</span>
   {{/if}}
 
-  {{input value=(get changeset propertyName) class="form-input" placeholder=placeholder}}
+  {{input id=propertyName value=(get changeset propertyName) class="form-input" placeholder=placeholder}}
 
   {{#if inputTextAfter}}
     <span class="input-group-addon">{{inputTextAfter}}</span>
   {{/if}}
 </div>
 {{#if (get (get changeset.error propertyName) 'validation') as |error| }}
-  <div class="chapter-{{propertyName}}-error">
+  <div class="{{propertyName}}-error">
     <p class="form-input-hint">{{error}}</p>
   </div>
 {{/if}}

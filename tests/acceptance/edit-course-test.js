@@ -13,11 +13,11 @@ test('Upon course creation users should be allowed to edit any of its fields', f
     assert.equal(currentURL(), `/courses/${course.id}/edit`);
   });
 
-  fillIn('#course-name', 'My awesome course');
-  fillIn('#course-subtitle', 'My awesome course is really amazing');
-  fillIn('#course-description', "<p>Let's put some html here</p>");
-  fillIn('#course-price', 25.00);
-  fillIn('#course-duration', 104.5);
+  fillIn('#name', 'My awesome course');
+  fillIn('#subtitle', 'My awesome course is really amazing');
+  fillIn('#description', "<p>Let's put some html here</p>");
+  fillIn('#price', 25.00);
+  fillIn('#duration', 104.5);
 
   click('.btn-save-course');
 
