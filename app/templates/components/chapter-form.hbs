@@ -8,24 +8,8 @@
     {{/if}}
   </div>
   <div class="panel-body">
-    <div class="form-group">
-      <label class="form-label" for="chapter-title">Title</label>
-      {{input value=changeset.title placeholder="Chapter title" id="chapter-title" class="form-input"}}
-      {{#if changeset.error.title}}
-        <div class="chapter-title-error">
-          <p class="form-input-hint">{{changeset.error.title.validation}}</p>
-        </div>
-      {{/if}}
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="chapter-title">Chapter Order</label>
-      {{input value=changeset.order placeholder="1" id="chapter-order" class="form-input"}}
-      {{#if changeset.error.order}}
-        <div class="chapter-order-error">
-          <p class="form-input-hint">{{changeset.error.order.validation}}</p>
-        </div>
-      {{/if}}
-    </div>
+    {{validated-input changeset=changeset propertyName='title' placeholder="Chapter Title"}}
+    {{validated-input changeset=changeset propertyName='order' placeholder="Chapter Order"}}
   </div>
   <div class="panel-footer">
     <button class="btn btn-primary btn-save-chapter" {{action save changeset}}>Save</button>

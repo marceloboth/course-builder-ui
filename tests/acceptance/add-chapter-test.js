@@ -12,15 +12,15 @@ test('visiting /courses/chapters/new', function(assert) {
     assert.equal(currentURL(), `/courses/${course.id}/chapters/new`);
   });
 
-  fillIn('#chapter-title', Array(257).join('e'));
-  fillIn('#chapter-order', '');
+  fillIn('#title', Array(257).join('e'));
+  fillIn('#order', '');
   andThen(() => {
-    assert.equal(find('.chapter-title-error').text().trim(), 'Title is too long (maximum is 255 characters)');
-    assert.equal(find('.chapter-order-error').text().trim(), 'Order must be a number');
+    assert.equal(find('.title-error').text().trim(), 'Title is too long (maximum is 255 characters)');
+    assert.equal(find('.order-error').text().trim(), 'Order must be a number');
   });
 
-  fillIn('#chapter-title', 'Chapter one');
-  fillIn('#chapter-order', '1');
+  fillIn('#title', 'Chapter one');
+  fillIn('#order', '1');
 
   click('.btn-save-chapter');
 
