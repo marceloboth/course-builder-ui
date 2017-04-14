@@ -1,0 +1,16 @@
+<label class="form-label">{{propertyName}}</label>
+
+<div class="input-group">
+  {{#if inputTextBefore}}
+    <span class="input-group-addon">{{inputTextBefore}}</span>
+  {{/if}}
+  {{input value=(get changeset propertyName) id=id class="form-input" placeholder=placeholder }}
+  {{#if inputTextAfter}}
+    <span class="input-group-addon">{{inputTextAfter}}</span>
+  {{/if}}
+</div>
+{{#if (get (get changeset.error propertyName) 'validation') as |error| }}
+  <div class="chapter-{{propertyName}}-error">
+    <p class="form-input-hint">{{error}}</p>
+  </div>
+{{/if}}

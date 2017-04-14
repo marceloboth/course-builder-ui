@@ -9,50 +9,20 @@
   </div>
   <div class="panel-body">
     <div class="form-group">
-      <label class="form-label" for="course-name">Name</label>
-      {{input value=changeset.name placeholder="Course name" id="course-name" class="form-input"}}
-      {{#if changeset.error.name}}
-        <div class="course-name-error">
-          <p class="form-input-hint">{{changeset.error.name.validation}}</p>
-        </div>
-      {{/if}}
+      {{validated-input changeset=changeset propertyName='name' placeholder="Course Name"}}
     </div>
     <div class="form-group">
-      <label class="form-label" for="course-subtitle">Subtitle</label>
-      {{input value=changeset.subtitle placeholder="Subtitle of the course" id="course-subtitle" class="form-input"}}
-      {{#if changeset.error.subtitle}}
-        <div class="course-subtitle-error">
-          <p class="form-input-hint">{{changeset.error.subtitle.validation}}</p>
-        </div>
-      {{/if}}
+      {{validated-input changeset=changeset propertyName='subtitle' placeholder="Course Subtitle"}}
     </div>
     <div class="columns">
       <div class="column col-6">
         <div class="form-group">
-          <label class="form-label" for="course-price">Price</label>
-          <div class="input-group">
-            <span class="input-group-addon">$</span>
-            {{input value=changeset.price placeholder="0.00" id="course-price" class="form-input"}}
-          </div>
-          {{#if changeset.error.price}}
-            <div class="course-price-error">
-              <p class="form-input-hint">{{changeset.error.price.validation}}</p>
-            </div>
-          {{/if}}
+          {{validated-input changeset=changeset placeholder="0.00" propertyName="price" inputTextBefore="$"}}
         </div>
       </div>
       <div class="column col-6">
         <div class="form-group">
-          <label class="form-label" for="course-duration">Duration</label>
-          <div class="input-group">
-            {{input value=changeset.duration placeholder="00.0" id="course-duration" class="form-input"}}
-            <span class="input-group-addon">hours</span>
-          </div>
-          {{#if changeset.error.duration}}
-            <div class="course-duration-error">
-              <p class="form-input-hint">{{changeset.error.duration.validation}}</p>
-            </div>
-          {{/if}}
+          {{validated-input changeset=changeset placeholder="00.0" propertyName="duration" inputTextAfter="hours"}}
         </div>
       </div>
     </div>
