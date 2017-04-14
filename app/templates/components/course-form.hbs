@@ -8,22 +8,14 @@
     {{/if}}
   </div>
   <div class="panel-body">
-    <div class="form-group">
-      {{validated-input changeset=changeset propertyName='name' placeholder="Course Name"}}
-    </div>
-    <div class="form-group">
-      {{validated-input changeset=changeset propertyName='subtitle' placeholder="Course Subtitle"}}
-    </div>
+    {{validated-input changeset=changeset propertyName='name' placeholder="Course Name"}}
+    {{validated-input changeset=changeset propertyName='subtitle' placeholder="Course Subtitle"}}
     <div class="columns">
       <div class="column col-6">
-        <div class="form-group">
-          {{validated-input changeset=changeset placeholder="0.00" propertyName="price" inputTextBefore="$"}}
-        </div>
+        {{validated-input changeset=changeset placeholder="0.00" propertyName="price" inputTextBefore="$"}}
       </div>
       <div class="column col-6">
-        <div class="form-group">
-          {{validated-input changeset=changeset placeholder="00.0" propertyName="duration" inputTextAfter="hours"}}
-        </div>
+        {{validated-input changeset=changeset placeholder="00.0" propertyName="duration" inputTextAfter="hours"}}
       </div>
     </div>
     <div class="form-group">

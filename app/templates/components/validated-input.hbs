@@ -1,10 +1,12 @@
-<label class="form-label">{{propertyName}}</label>
+<label class="form-label">{{capitalize propertyName}}</label>
 
 <div class="input-group">
   {{#if inputTextBefore}}
     <span class="input-group-addon">{{inputTextBefore}}</span>
   {{/if}}
-  {{input value=(get changeset propertyName) id=id class="form-input" placeholder=placeholder }}
+
+  {{input value=(get changeset propertyName) class="form-input" placeholder=placeholder}}
+
   {{#if inputTextAfter}}
     <span class="input-group-addon">{{inputTextAfter}}</span>
   {{/if}}
