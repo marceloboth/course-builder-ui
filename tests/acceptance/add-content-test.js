@@ -13,15 +13,15 @@ test('User should can create a new content for the chapter', function(assert) {
     assert.equal(currentURL(), new_content_path);
   });
 
-  fillIn('#content-title', Array(257).join('e'));
-  fillIn('#content-order', '');
+  fillIn('#title', Array(257).join('e'));
+  fillIn('#order', '');
   andThen(() => {
-    assert.equal(find('.content-title-error').text().trim(), 'Title is too long (maximum is 255 characters)');
-    assert.equal(find('.content-order-error').text().trim(), 'Order must be a number');
+    assert.equal(find('.title-error').text().trim(), 'Title is too long (maximum is 255 characters)');
+    assert.equal(find('.order-error').text().trim(), 'Order must be a number');
   });
 
-  fillIn('#content-title', 'Content one');
-  fillIn('#content-order', '1');
+  fillIn('#title', 'Content one');
+  fillIn('#order', '1');
 
   click('.btn-save-content');
 
