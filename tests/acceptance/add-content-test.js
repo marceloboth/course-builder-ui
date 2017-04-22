@@ -3,7 +3,7 @@ import moduleForAcceptance from 'course-builder-ui/tests/helpers/module-for-acce
 
 import {
   authenticateSession
-} from 'gestor-civil-ui/tests/helpers/ember-simple-auth';
+} from 'course-builder-ui/tests/helpers/ember-simple-auth';
 
 moduleForAcceptance('Acceptance | add content');
 
