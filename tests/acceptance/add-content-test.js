@@ -1,9 +1,14 @@
 import { test } from 'qunit';
 import moduleForAcceptance from 'course-builder-ui/tests/helpers/module-for-acceptance';
 
+import {
+  authenticateSession
+} from 'gestor-civil-ui/tests/helpers/ember-simple-auth';
+
 moduleForAcceptance('Acceptance | add content');
 
 test('User should can create a new content for the chapter', function(assert) {
+  authenticateSession(this.application);
   let chapter = server.create('chapter');
   const new_content_path = `/courses/${chapter.course.id}/chapters/${chapter.id}/content/new`;
 

@@ -2,9 +2,14 @@ import { test } from 'qunit';
 
 import moduleForAcceptance from 'course-builder-ui/tests/helpers/module-for-acceptance';
 
+import {
+  authenticateSession
+} from 'course-builder-ui/tests/helpers/ember-simple-auth';
+
 moduleForAcceptance('Acceptance | main/new course');
 
 test('User must be allowed to create a new course by filling the form', function(assert) {
+  authenticateSession(this.application);
   visit('/courses/new');
 
   andThen(function() {
@@ -25,6 +30,7 @@ test('User must be allowed to create a new course by filling the form', function
 });
 
 test('User must be noticed if the form input is blank', function(assert) {
+  authenticateSession(this.application);
   visit('/courses/new');
 
   click('.btn-save-course');
@@ -36,6 +42,7 @@ test('User must be noticed if the form input is blank', function(assert) {
 });
 
 test('User must be noticed if the form input contain fields that exceed the limit of characters', function(assert) {
+  authenticateSession(this.application);
   visit('/courses/new');
 
   fillIn('#name', Array(257).join("a"));

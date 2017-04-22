@@ -2,9 +2,14 @@ import { test } from 'qunit';
 
 import moduleForAcceptance from 'course-builder-ui/tests/helpers/module-for-acceptance';
 
+import {
+  authenticateSession
+} from 'course-builder-ui/tests/helpers/ember-simple-auth';
+
 moduleForAcceptance('Acceptance | edit course');
 
 test('Upon course creation users should be allowed to edit any of its fields', function(assert) {
+  authenticateSession(this.application);
   let course = server.create('course');
 
   visit(`/courses/${course.id}/edit`);

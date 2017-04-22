@@ -7,7 +7,7 @@
           <div class="panel-title">Log-in</div>
         </div>
         <div class="panel-body">
-          <form {{ action "authenticate" on="submit" }}>
+          <form {{ action "authenticate" username password on="submit"}}>
             <div class="form-group">
               <label class="form-label" for="username">Username</label>
               {{input value=username placeholder="Use your unique username" id="username" class="form-input"}}
@@ -16,8 +16,19 @@
               <label class="form-label" for="password">Password</label>
               {{input value=password placeholder="Use your unique password" id="password" class="form-input" type="password"}}
             </div>
+            <div class="form-group text-danger login-err">
+              {{errorMessage}}
+            </div>
             <div class="form-group">
-              <button class="btn btn-primary btn-login" type="submit">Let's go!</button>
+              <button class="btn btn-primary btn-login"
+                type="submit"
+                disabled={{isLoggingIn}}>
+                {{#if isLoggingIn}}
+                  Checking...
+                {{else}}
+                  Let's go!
+                {{/if}}
+              </button>
             </div>
           </form>
         </div>
