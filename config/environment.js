@@ -6,6 +6,8 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    apiNamespace: 'api/v1',
+    serverURL: '',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -29,6 +31,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.serverURL = 'http://localhost:3000';
   }
 
   if (environment === 'test') {
@@ -45,6 +48,12 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+
+  ENV.apiBaseURL = ENV.serverURL + '/' + ENV.apiNamespace;
+  ENV['ember-simple-auth'] = {
+    routeAfterAuthentication: 'main',
+    routeIfAlreadyAuthenticated: 'main'
+  };
 
   return ENV;
 };
