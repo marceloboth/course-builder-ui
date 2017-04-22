@@ -4,7 +4,7 @@ import ENV from "../config/environment";
 
 export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
   authorizer: 'authorizer:application',
-  namespace: 'api/v1',
+  namespace: ENV.apiNamespace,
 
   ajax() {
     const session = this.get('session');
