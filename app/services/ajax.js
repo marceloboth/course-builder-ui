@@ -10,8 +10,8 @@ export default AjaxService.extend({
     const headers = {};
     this.get('session').authorize('authorizer:application', (headerName, headerValue) => {
       headers[headerName] = headerValue;
-      headers['Content-Type'] = 'application/vnd.api+json',
-        headers['Accept'] = 'application/vnd.api+json'
+      headers['Content-Type'] = 'application/vnd.api+json';
+      headers['Accept'] = 'application/vnd.api+json';
     });
 
     return headers;
