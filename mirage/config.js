@@ -1,3 +1,5 @@
+import { Response } from 'ember-cli-mirage';
+
 export default function() {
   this.post('/oauth/token', (db, request) => {
     if (request.requestBody.indexOf("username=admin&password=admin") >= 0) {
