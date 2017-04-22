@@ -10,14 +10,14 @@
           <form {{ action "authenticate" on="submit" }}>
             <div class="form-group">
               <label class="form-label" for="username">Username</label>
-              <input class="form-input username-field" type="text" id="username" placeholder="Use your unique username" />
+              {{input value=username placeholder="Use your unique username" id="username" class="form-input"}}
             </div>
             <div class="form-group">
               <label class="form-label" for="password">Password</label>
-              <input class="form-input password-field" type="text" id="password" placeholder="Use your unique password" />
+              {{input value=password placeholder="Use your unique password" id="password" class="form-input" type="password"}}
             </div>
             <div class="form-group">
-              <button class="btn btn-primary authenticate-button" type="submit">Let's go!</button>
+              <button class="btn btn-primary btn-login" type="submit">Let's go!</button>
             </div>
           </form>
         </div>
