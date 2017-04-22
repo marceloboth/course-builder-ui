@@ -2,6 +2,7 @@ import { Response } from 'ember-cli-mirage';
 
 export default function() {
   this.post('/oauth/token', (db, request) => {
+    console.log(request.requestBody);
     if (request.requestBody.indexOf("username=admin&password=admin") >= 0) {
       return new Response(200, {}, {
         "access_token": "fake_token",
@@ -19,6 +20,10 @@ export default function() {
   });
 
   this.namespace = 'api/v1';
+
+  this.get('/session', (schema) => {
+    return schema.users.find(1);
+  });
 
   this.resource('courses');
   this.resource('chapters');
