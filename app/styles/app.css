@@ -1,0 +1,15 @@
+.bg-gray {
+  background: #f8f9fa;
+  color: #667189;
+  padding: 1rem;
+}
+
+.navbar {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.mr-10 {
+  margin-right: 1rem;
+}
