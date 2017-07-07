@@ -1,4 +1,4 @@
-import { Factory, faker } from 'ember-cli-mirage';
+import { Factory, faker, association } from 'ember-cli-mirage';
 
 export default Factory.extend({
   name() { return faker.random.word(); },
@@ -6,4 +6,5 @@ export default Factory.extend({
   price() { return 234.99; },
   duration() { return 45.9; },
   description() { return "<p>Text</p>"; },
+  user: association()
 });

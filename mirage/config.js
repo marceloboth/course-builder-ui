@@ -18,9 +18,9 @@ export default function() {
     }
   });
 
-  this.namespace = '/api/v1';
+  this.namespace = 'api/v1';
 
-  this.get('/session', (schema) => {
+  this.get('/session', (schema, request) => {
     return schema.users.find(1);
   });
 
